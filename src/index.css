@@ -1,0 +1,239 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --------------------------------------------------
+   VectorLoom — Global Styles
+-------------------------------------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #111111;
+  font-family:
+    Inter,
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* --------------------------------------------------
+   Selection
+-------------------------------------------------- */
+
+::selection {
+  background: #111111;
+  color: #ffffff;
+}
+
+/* --------------------------------------------------
+   Scrollbar
+-------------------------------------------------- */
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b5b5b5;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #777777;
+}
+
+/* --------------------------------------------------
+   Focus accessibility
+-------------------------------------------------- */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid #111111;
+  outline-offset: 3px;
+}
+
+/* --------------------------------------------------
+   Buttons
+-------------------------------------------------- */
+
+button {
+  font-family: inherit;
+}
+
+/* --------------------------------------------------
+   Inputs
+-------------------------------------------------- */
+
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+/* --------------------------------------------------
+   VectorLoom Components
+-------------------------------------------------- */
+
+@layer components {
+  /*
+   * Main storefront container
+   */
+  .store-container {
+    @apply mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-10 xl:px-12;
+  }
+
+  /*
+   * Section heading
+   */
+  .section-heading {
+    @apply mb-6 flex items-end justify-between;
+  }
+
+  .section-title {
+    @apply text-xl font-semibold tracking-tight text-neutral-950 sm:text-2xl;
+  }
+
+  .section-link {
+    @apply text-sm font-medium text-neutral-600 transition-colors hover:text-black;
+  }
+
+  /*
+   * Product card
+   */
+  .product-card {
+    @apply relative overflow-hidden bg-neutral-100;
+  }
+
+  .product-image {
+    @apply aspect-[3/4] w-full object-cover transition-transform duration-500;
+  }
+
+  .product-card:hover .product-image {
+    transform: scale(1.03);
+  }
+
+  /*
+   * Product information
+   */
+  .product-info {
+    @apply pt-3;
+  }
+
+  .product-name {
+    @apply truncate text-sm font-medium text-neutral-950;
+  }
+
+  .product-meta {
+    @apply mt-1 text-xs text-neutral-500;
+  }
+
+  /*
+   * Primary storefront button
+   */
+  .store-button {
+    @apply inline-flex items-center justify-center rounded-none bg-black px-6 py-3 text-sm font-medium text-white transition-colors duration-200 hover:bg-neutral-800;
+  }
+
+  /*
+   * Secondary storefront button
+   */
+  .store-button-outline {
+    @apply inline-flex items-center justify-center rounded-none border border-neutral-300 bg-white px-6 py-3 text-sm font-medium text-neutral-900 transition-colors duration-200 hover:border-black hover:bg-neutral-50;
+  }
+
+  /*
+   * Category navigation
+   */
+  .category-link {
+    @apply text-sm font-medium text-neutral-600 transition-colors hover:text-black;
+  }
+
+  .category-link.active {
+    @apply text-black;
+  }
+
+  /*
+   * Recommendation badge
+   */
+  .recommendation-badge {
+    @apply inline-flex items-center rounded-full bg-black px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-white;
+  }
+
+  /*
+   * Recommendation explanation
+   */
+  .recommendation-reason {
+    @apply text-xs leading-relaxed text-neutral-500;
+  }
+
+  /*
+   * Search field
+   */
+  .search-input {
+    @apply w-full border-0 border-b border-neutral-300 bg-transparent px-0 py-2 text-sm text-neutral-900 placeholder:text-neutral-400 focus:border-black focus:outline-none;
+  }
+}
+
+/* --------------------------------------------------
+   Image rendering
+-------------------------------------------------- */
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* --------------------------------------------------
+   Reduced motion
+-------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --------------------------------------------------
+   Mobile adjustments
+-------------------------------------------------- */
+
+@media (max-width: 640px) {
+  body {
+    overflow-x: hidden;
+  }
+}
