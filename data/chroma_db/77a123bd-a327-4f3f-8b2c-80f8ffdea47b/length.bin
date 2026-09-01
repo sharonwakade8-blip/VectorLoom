@@ -1,0 +1,1 @@
+invalid type: string "✅ Yes \n✅ Yes \n✅ Yes \nPass complex objects ❌ No \n✅ Yes \n✅ Yes \nChaining jobs \n❌ No \n✅ Yes \n✅ Yes \nJob Monitoring \n❌ No \n✅ Yes \n✅ Yes \nHandles millions \n❌ No \n❌ No (medium) \n✅ Yes \nBest use case \nSimple async task Medium async task with chaining Heavy processing of millions of records \n \nApex Best Practices \n1. Bulkify Code \n
